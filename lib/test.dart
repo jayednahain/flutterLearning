@@ -1,21 +1,20 @@
 void main() {
-  Person peronObj = Person(name: "jayed Nahian", age: 10);
-  print("name :" + peronObj.name);
-  print("age  :" + peronObj.age.toString());
+  void Function(String)? onDone; // define function
+  onDone?.call("1stime");
 
-  peronObj  = peronObj.copyWith(name:"raisa");
+  // write functiond defination
+  onDone = (msg) => print('work has been finished ${msg}');
+
+  onDone?.call("2nd time");
+
+  var button = new MyButton();
 }
 
-class Person {
-  final String name;
-  final int age;
+class MyButton {
+  final void Function()? onTap;
+  MyButton({this.onTap});
 
-  Person({required this.name, required this.age});
-
-  Person copyWith({
-    String? name ,
-    int? age
-  }){
-    return Person(name: name ?? this.name, age: age ?? this.age)
+  void onPress() {
+    onTap?.call();
   }
 }
