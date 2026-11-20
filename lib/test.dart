@@ -1,20 +1,8 @@
-void main() {
-  void Function(String)? onDone; // define function
-  onDone?.call("1stime");
+typedef PriceFormatter = String Function(double amount);
 
-  // write functiond defination
-  onDone = (msg) => print('work has been finished ${msg}');
+void main(List<String> args) {
+  print("hellow");
 
-  onDone?.call("2nd time");
-
-  var button = new MyButton();
-}
-
-class MyButton {
-  final void Function()? onTap;
-  MyButton({this.onTap});
-
-  void onPress() {
-    onTap?.call();
-  }
+  void runFormatter(PriceFormatter priceFormatter) =>
+      print(priceFormatter(12.5));
 }
