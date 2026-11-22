@@ -57,3 +57,11 @@ class Rectangle {
     print('Rectangle created with area: $area');
   }
 }
+
+// const Money(this.amount, this.currency);
+
+class Money {
+  int amount;
+  String currency;
+  Money(this.amount, this.currency);
+}
